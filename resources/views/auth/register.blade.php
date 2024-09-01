@@ -84,7 +84,7 @@
 
         <!-- Image Section -->
         <div class="w-1/2 shadow-2xl">
-            <img class="object-cover w-full h-screen hidden md:block" src="img/da.jpg" alt="Background">
+            <img class="object-cover w-full h-screen hidden md:block" src="img/nw.jpg" alt="Background">
         </div>
     </div>
 
