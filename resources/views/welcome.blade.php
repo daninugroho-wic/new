@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio</title>
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/hid&shw.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'rel='stylesheet'>
 
 </head>
@@ -72,7 +73,7 @@
             </nav>
             <div class="header-text">
                 <p>PORTOFOLIO</p>
-                <h1>Hai Saya <span>Dani Nugroho Wicaksono</span><br>Seko Sukoharjo</h1>
+                <h1>Hai Saya <span>Dani Nugroho Wicaksono</span><br>Dari Sukoharjo</h1>
             </div>
         </div>
     </div>
@@ -85,7 +86,7 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="img/nn1.jpg">
+                <img src="img/pp.jpeg">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
@@ -163,45 +164,70 @@
         </div>
     </div>
 </div>
+
 <!-- PORTOFOLIO -->
 <div id="portofolio">
     <div class="container">
         <div class="sub-title">My Project</div>
         <div class="work-list">
             <div class="work">
-                <img src="img/nn1.jpg">
+                <img src="img/n1.png">
                 <div class="layer">
                     <h3>Hasil Project 1</h3>
                     <p class="sub-p">Lorem ipsum dolor sit amet consectetur
-                        adipisicing
-                        elit. Dolorem numquam, ullam accusamus impedit
-                        officiis, </p>
-                    <a href="#"><i class='bx bxs-paper-plane'></i></a>
+                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
+                    <a href="#"><i class='bx bxl-github'></i></a>
                 </div>
             </div>
             <div class="work">
-                <img src="img/nn1.jpg">
+                <img src="img/n2.png">
                 <div class="layer">
                     <h3>Hasil Project 2</h3>
                     <p class="sub-p">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Dolorem numquam, ullam
-                        accusamus impedit officiis, </p>
-                    <a href="#"><i class='bx bxs-color'></i></a>
+                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
+                    <a href="https://github.com/daninugroho-wic/E-Commerce"><i class='bx bxl-github'></i></a>
                 </div>
             </div>
             <div class="work">
-                <img src="img/nn1.jpg">
+                <img src="img/n3.png">
                 <div class="layer">
                     <h3>Hasil Project 3</h3>
                     <p class="sub-p">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Dolorem numquam, ullam
-                        accusamus impedit officiis, </p>
-                    <a href="#"><i class='bx bxl-whatsapp-square'></i></a>
+                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            <!-- Mulai dari sini, work container disembunyikan secara default -->
+            <div class="work hideable">
+                <img src="img/n3.png">
+                <div class="layer">
+                    <h3>Hasil Project 4</h3>
+                    <p class="sub-p">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            <div class="work hideable">
+                <img src="img/n3.png">
+                <div class="layer">
+                    <h3>Hasil Project 5</h3>
+                    <p class="sub-p">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                </div>
+            </div>
+            <div class="work hideable">
+                <img src="img/n3.png">
+                <div class="layer">
+                    <h3>Hasil Project 6</h3>
+                    <p class="sub-p">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
+                    <a href="#"><i class='bx bxl-github'></i></a>
                 </div>
             </div>
         </div>
     </div>
-    <a href="#" class="btn">See more</a>
+    <a href="#" class="btn" id="seeMoreBtn">See more</a>
 </div>
 
 <!-- CONTACT -->
@@ -226,6 +252,7 @@
                     <input type="text" id="nama" name="nama" placeholder="Your Name" required>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
                     <textarea id="pesan" name="pesan" rows="6" placeholder="Your Massage"></textarea>
+
                     <button type="submit" class="btn btn2">Submit</button>
                     </input>
                 </form>
@@ -248,8 +275,7 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
-</script>
-<script>
+
     var sidemeu = document.getElementById("sidemenu");
     var menuicon = document.getElementById("menuicon");
 
@@ -262,6 +288,19 @@
         sidemeu.style.right = "-200px";
         menuicon.classList.remove("hide");
     }
+    document.getElementById('seeMoreBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        const hideableItems = document.querySelectorAll('.hideable');
+        hideableItems.forEach(function(item) {
+            if (item.style.display === 'none') {
+                item.style.display = 'block';
+                document.getElementById('seeMoreBtn').textContent = 'See less';
+            } else {
+                item.style.display = 'none';
+                document.getElementById('seeMoreBtn').textContent = 'See more';
+            }
+        });
+    });
 </script>
 </body>
 
