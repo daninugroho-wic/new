@@ -29,6 +29,7 @@
                         <td>{{ $kontak->nama }}</td>
                         <td>{{ $kontak->email }}</td>
                         <td>{{ $kontak->pesan }}</td>
+
                         <td>{{ $kontak->created_at }}</td>
                     </tr>
                 @endforeach

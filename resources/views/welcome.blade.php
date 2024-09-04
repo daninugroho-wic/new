@@ -244,9 +244,7 @@
                     <input type="text" id="nama" name="nama" placeholder="Your Name" required>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
                     <textarea id="pesan" name="pesan" rows="6" placeholder="Your Massage"></textarea>
-
                     <button type="submit" class="btn btn2">Submit</button>
-                    </input>
                 </form>
             </div>
         </div>
