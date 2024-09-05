@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\DashadminController;
-use App\Http\Controllers\UserController; // Pastikan controller user telah dibuat
+
 
 // Route untuk halaman utama
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route untuk dashboard user, menggunakan middleware auth dan verified
 Route::get('/dashboard', function () {
