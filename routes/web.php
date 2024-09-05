@@ -1,18 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AddproController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\DashadminController;
+use App\Http\Controllers\UserController; // Pastikan controller user telah dibuat
 
 // Route untuk halaman utama
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route resource untuk AddproController
-Route::resource('addpro', AddproController::class);
 
 // Route untuk dashboard user, menggunakan middleware auth dan verified
 Route::get('/dashboard', function () {
@@ -31,7 +28,6 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/kontak', [KontakController::class, 'index'])->name('admin.kontak.index');
     Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store');
     Route::get('/create', [KontakController::class, 'create'])->name('admin.kontak.create');
-
     Route::get('/dashadmin', [DashadminController::class, 'index'])->name('admin.dashadmin');
 });
 
