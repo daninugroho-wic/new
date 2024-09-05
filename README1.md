@@ -13,7 +13,9 @@ php artisan cache:clear <!-- cache konfigurasi, cache rute, dan cache view -->
 php artisan view:clear <!-- cache dari view yang di-compile oleh Blade -->
 php artisan optimize:clear <!-- cache yang dihasilkan oleh perintah optimize, termasuk cache konfigurasi, rute, dan view -->
 
+php artisan cache:clear
+php artisan view:clear
+php artisan optimize:clear
 php artisan config:cache
 php artisan route:cache
-php artisan cache:clear
 php artisan session:clear
