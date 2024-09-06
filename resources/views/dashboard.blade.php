@@ -4,14 +4,13 @@
             {{ __('Dashboard USER') }}
         </h2> --}}
     </x-slot>
-    <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio</title>
+    <title>Portofolio USER</title>
     <link rel="stylesheet" href="css/home.css">
     {{-- <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/contact.css">
@@ -31,7 +30,7 @@
         <div class="container">
             
             <div class="header-text">
-                <p>PORTOFOLIO</p>
+                <p>PORTOFOLIO USER</p>
                 <h1>Hai Saya <span>Dani Nugroho Wicaksono</span><br>Dari Sukoharjo</h1>
             </div>
         </div>

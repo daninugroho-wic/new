@@ -7,9 +7,9 @@ use App\Http\Controllers\DashadminController;
 
 
 // Route untuk halaman utama
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Route untuk dashboard user, menggunakan middleware auth dan verified
 Route::get('/dashboard', function () {
@@ -25,11 +25,11 @@ Route::middleware('auth')->group(function () {
 
 // Route khusus untuk admin, menggunakan prefix dan middleware auth
 Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/dashadmin', [DashadminController::class, 'index'])->name('admin.dashadmin');
     Route::get('/kontak', [KontakController::class, 'index'])->name('admin.kontak.index');
     Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store');
     Route::get('/create', [KontakController::class, 'create'])->name('admin.kontak.create');
-    Route::get('/dashadmin', [DashadminController::class, 'index'])->name('admin.dashadmin');
 });
-
+route::get('admin/dashadmin', [DashadminController::class,'index'])-> middleware(['auth','admin']);
 // Include route untuk autentikasi
 require __DIR__.'/auth.php';

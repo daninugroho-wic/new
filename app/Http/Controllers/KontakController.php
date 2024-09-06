@@ -55,7 +55,7 @@ class KontakController extends Controller
      */
     public function edit(kontak $kontak)
     {
-        return view('kontak.edit');
+        return view('admin.kontak.edit', compact('kontak'));
     }
 
     /**
@@ -63,7 +63,16 @@ class KontakController extends Controller
      */
     public function update(Request $request, kontak $kontak)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required|max:255',
+            'email' => 'required|email',
+            'pesan' => 'required',
+        ]);
+    
+        // Update data ke dalam tabel
+        $kontak->update($validatedData);
+    
+        return redirect()->route('kontak.index')->with('success', 'Kontak berhasil diperbarui!');
     }
 
     /**
@@ -71,7 +80,9 @@ class KontakController extends Controller
      */
     public function destroy(kontak $kontak)
     {
-        //
+        $kontak->delete();
+
+        return redirect()->route('kontak.index')->with('success', 'Kontak berhasil dihapus!');
     }
 }
 
