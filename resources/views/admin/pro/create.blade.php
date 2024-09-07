@@ -1,18 +1,18 @@
-<!-- resources/views/kontak.blade.php -->
+<!-- resources/views/addpro.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Kontak</title>
-    <link rel="stylesheet" href="css/kontak.css">
+    <title>Daftar Addpro</title>
+    <link rel="stylesheet" href="css/addpro.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">Daftar Kontak</h1>
+        <h1 class="mb-4">Daftar Addpro</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -25,13 +25,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($kontak as $kontak)
+                @foreach ($addpro as $addpro)
                     <tr>
-                        <td>{{ $kontak->id }}</td>
-                        <td>{{ $kontak->nama }}</td>
-                        <td>{{ $kontak->email }}</td>
-                        <td>{{ $kontak->pesan }}</td>
-                        <td>{{ $kontak->created_at }}</td>
+                        <td>{{ $addpro->id }}</td>
+                        <td>{{ $addpro->nama }}</td>
+                        <td>{{ $addpro->email }}</td>
+                        <td>{{ $addpro->pesan }}</td>
+                        <td>{{ $addpro->created_at }}</td>
                     </tr>
                 @endforeach
             </tbody>
@@ -39,8 +39,8 @@
     </div>
     <td>
         <div class="d-flex">
-        <a href="create" class="btn btn-success">edit</a>
-        <form action="/kontak{{$kontak->id}}" method="POST">
+        <a href="dashboard" class="btn btn-success">edit</a>
+        <form action="/addpro{{$addpro->id}}" method="POST">
             @method('delete');
             @csrf
             <button type="submit" class="btn btn-danger">Hapus</button>

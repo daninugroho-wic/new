@@ -14,7 +14,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand ms-3" href="dashadmin">Admin Dashboard</a>
+            <a class="navbar-brand ms-3" href="/">Admin Dashboard</a>
             <a class="navbar-brand ms-3" href="kontak">Kontak</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -24,14 +24,14 @@
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Admin
                         </button>
-                
+
                         <!-- Dropdown Menu Positioned to the Right -->
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
                             <!-- Profile Link -->
                             <li>
                                 <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
                             </li>
-                
+
                             <!-- Log Out Link -->
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
@@ -50,11 +50,11 @@
         </div>
     </nav>
 
-        <!-- Main Content -->
-        <div class="content p-4" id="mainContent">
-            <h3>HALAMAN ADMIN</h3>
-            <p>Selamat datang di halaman admin! Anda dapat mengelola aplikasi dari sini.</p>
-        </div>
+    <!-- Main Content -->
+    <div class="content p-4" id="mainContent">
+        <h3>HALAMAN ADMIN</h3>
+        <p>Selamat datang di halaman admin! Anda dapat mengelola aplikasi dari sini.</p>
+    </div>
     </div>
 
     {{-- PROJECT SHOW --}}
@@ -72,8 +72,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- @foreach 
-                ($kontak as $kontak)
+                {{-- @foreach ($kontak as $kontak)
                     <tr>
                         <td>{{ $kontak->id }}</td>
                         <td>{{ $kontak->nama }}</td>
@@ -86,6 +85,20 @@
         </table>
     </div>
 
+    <button id="tambahButton" href="create" class="btn btn-primary">Tambah</button>
+    {{-- <a href="create" class="btn btn-success">edit</a> --}}
+
+    <!-- Container Form (Hidden by default) -->
+    <div id="formContainer" style="display: none;">
+        <form action="{{ route('pro.store') }}" method="POST">
+            @csrf
+            <input type="text" id="nama" name="nama" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="pesan" name="pesan" rows="6" placeholder="Your Massage"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+        </form>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // JavaScript to toggle sidebar
@@ -95,19 +108,26 @@
             sidebar.classList.toggle('hide-sidebar');
             content.classList.toggle('full-width');
         });
+
+        document.getElementById('tambahButton').addEventListener('click', function() {
+            var formContainer = document.getElementById('formContainer');
+            formContainer.style.display = (formContainer.style.display === 'none') ? 'block' : 'none';
+        });
     </script>
 </body>
 <style>
-    body{
+    body {
         background: url(/img/nb.jpg);
         background-size: cover;
     }
 
-    .mb-4{
+    .mb-4 {
         color: orange
     }
-    .h3{
+
+    .h3 {
         font: aliceblue
     }
 </style>
+
 </html>
