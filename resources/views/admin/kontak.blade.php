@@ -32,32 +32,34 @@
                         <td>{{ $kontak->email }}</td>
                         <td>{{ $kontak->pesan }}</td>
                         <td>{{ $kontak->created_at }}</td>
+                        <td>
+                            <div class="d-flex">
+                                <a href="create" class="btn btn-success me-2">edit</a> 
+                                <a href="{{ route('admin/kontak/edit', ['id' => $kontak->id]) }}"type="button" class="btn btn-secondary">Edit</a>
+                                <form action="/kontak{{ $kontak->id }}" method="POST">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                </form>
+                            </div>
+                        </td>
+                        
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    <td>
-        <div class="d-flex">
-        <a href="create" class="btn btn-success">edit</a>
-        <form action="/kontak{{$kontak->id}}" method="POST">
-            @method('delete');
-            @csrf
-            <button type="submit" class="btn btn-danger">Hapus</button>
-        </form>
-    </div>
     </td>
 </body>
 <style>
-    body{
+    body {
         background: url(/img/nb.jpg);
         background-size: cover;
     }
 
-    .mb-4{
+    .mb-4 {
         color: orange
     }
 </style>
+
 </html>
-
-

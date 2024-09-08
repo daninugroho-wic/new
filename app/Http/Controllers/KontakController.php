@@ -47,15 +47,16 @@ class KontakController extends Controller
      */
     public function show(kontak $kontak)
     {
-        return view('kontak.show');
+        // return view('kontak.show');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(kontak $kontak)
+    public function edit(kontak $id)
     {
-        //
+        $kontak = Kontak::findOrFail($id);
+        return view( 'admin.kontak.edit', compact( 'kontak' ) );
     }
 
     /**

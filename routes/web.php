@@ -39,11 +39,27 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 
 // Route khusus untuk admin, menggunakan prefix dan middleware auth
 Route::middleware(['auth'])->prefix('admin')->group(function () {
+    
     // KONTAK
     Route::get('/dashadmin', [DashadminController::class, 'index'])->name('admin.dashadmin'); //bisa
+    // Route untuk menampilkan daftar kontak
     Route::get('/kontak', [KontakController::class, 'index'])->name('admin.kontak.index'); //bisa
+    Route::get('/kontak/edit/{id}', [KontakController::class, 'edit'])->name('admin/kontak/edit');
+    
+    // Route untuk menampilkan form create di halaman admin (untuk menambah kontak)
+    Route::get('/admin/create', [KontakController::class, 'create'])->name('admin.create');
+    // Route untuk menyimpan data kontak baru
+    Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store');
+    // Route untuk menampilkan form edit data kontak
+    Route::get('/kontak/{id}/edit', [KontakController::class, 'edit'])->name('admin.kontak.edit');
+    // Route untuk memperbarui data kontak
+    Route::put('/kontak/{id}', [KontakController::class, 'update'])->name('admin.kontak.update');
+    // Route untuk menghapus data kontak
+    Route::delete('/kontak/{id}', [KontakController::class, 'destroy'])->name('admin.kontak.destroy');
 
-    //ADDPROJECT
+
+
+    // ADD PROJECT
     Route::get('/admin/dashadmin', [AddproController::class, 'index'])->name('admin.dashadmin'); //bisa
     // Route untuk menampilkan form tambah data (create.blade) di folder 'pro'
     Route::get('/pro/create', [AddproController::class, 'create'])->name('pro.create');
