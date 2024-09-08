@@ -40,31 +40,10 @@ Route::get('/products', [ProductController::class, 'index'])->name('products.ind
 // Route khusus untuk admin, menggunakan prefix dan middleware auth
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     // KONTAK
-    // Route::get('/dashadmin', [DashadminController::class, 'index'])->name('admin.dashadmin');
-    // Route::get('/kontak', [KontakController::class, 'index'])->name('admin.kontak.index');
-    // Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store');
-    // Route::get('/create', [KontakController::class, 'create'])->name('admin.kontak.create');
-// Route untuk dashboard admin
     Route::get('/dashadmin', [DashadminController::class, 'index'])->name('admin.dashadmin'); //bisa
-    // Route untuk menampilkan daftar kontak
     Route::get('/kontak', [KontakController::class, 'index'])->name('admin.kontak.index'); //bisa
-    // Route untuk menampilkan form create di halaman admin (untuk menambah kontak)
-    Route::get('/admin/create', [KontakController::class, 'create'])->name('admin.create');
-    // Route untuk menyimpan data kontak baru
-    Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store');
-    // Route untuk menampilkan form edit data kontak
-    Route::get('/kontak/{id}/edit', [KontakController::class, 'edit'])->name('admin.kontak.edit');
-    // Route untuk memperbarui data kontak
-    Route::put('/kontak/{id}', [KontakController::class, 'update'])->name('admin.kontak.update');
-    // Route untuk menghapus data kontak
-    Route::delete('/kontak/{id}', [KontakController::class, 'destroy'])->name('admin.kontak.destroy');
 
-
-
-    // ADD PROJECT
-    // Route::get('/addpro', [AddproController::class, 'index'])->name('admin.dashadmin');
-    // Route::get('/create', [AddproController::class, 'create'])->name('admin.pro.create');
-    // Route untuk menampilkan halaman admin (dashadmin.blade)
+    //ADDPROJECT
     Route::get('/admin/dashadmin', [AddproController::class, 'index'])->name('admin.dashadmin'); //bisa
     // Route untuk menampilkan form tambah data (create.blade) di folder 'pro'
     Route::get('/pro/create', [AddproController::class, 'create'])->name('pro.create');
