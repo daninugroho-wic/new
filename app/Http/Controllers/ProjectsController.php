@@ -30,7 +30,13 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+            // Simpan data ke dalam tabel
+            Projects::create();
+    
+            // return view('admin.dashboard');
+            return redirect()->back()->with('success', 'Pesan berhasil di kirim!');
+        
     }
 
     /**

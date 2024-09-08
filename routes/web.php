@@ -6,6 +6,7 @@ use App\Http\Controllers\KontakController;
 use App\Http\Controllers\DashadminController;
 use App\Http\Controllers\AddproController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\ProductController;
 
 
 // Route untuk halaman utama
@@ -28,7 +29,12 @@ Route::middleware('auth')->group(function () {
 // Route::get('/projects', [ProjectsController::class, 'index'])->name('projects.user.index');
 Route::get('/projects', [ProjectsController::class, 'index'])->name('projects.index'); //bisa
 Route::get('/projects/create', [ProjectsController::class, 'create'])->name('user.projects.create');
+Route::post('/projects', [ProjectsController::class, 'store'])->name('projects.store');
 
+
+//PRODUCT
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+// Route::resource('/products', \App\Http\Controllers\ProductController::class, 'index');
 });
 
 // Route khusus untuk admin, menggunakan prefix dan middleware auth
