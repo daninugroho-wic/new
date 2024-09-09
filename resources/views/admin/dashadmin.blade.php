@@ -15,7 +15,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand ms-3" href="/">Admin Dashboard</a>
-            <a class="navbar-brand ms-3" href="kontak">Kontak</a>
+            <a class="navbar-brand ms-5" href="kontak">Kontak</a>
+            <a class="navbar-brand ms-1" href="products">Product</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
