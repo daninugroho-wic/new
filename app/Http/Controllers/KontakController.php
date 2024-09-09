@@ -53,19 +53,46 @@ class KontakController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(kontak $id)
-    {
-        $kontak = Kontak::findOrFail($id);
-        return view( 'admin.kontak.edit', compact( 'kontak' ) );
-    }
+
+    public function edit($id)
+{
+    $kontak = Kontak::findOrFail($id);
+    return view('admin.kontak.update', compact('kontak'));
+}
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, kontak $kontak)
+    public function update(Request $request, $id)
     {
-        //
+        // Validasi data
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'pesan' => 'required|string',
+        ]);
+    
+        // Temukan kontak berdasarkan ID
+        $kontak = Kontak::findOrFail($id);
+    
+        // Update nilai kontak
+        $kontak->nama = $request->nama;
+        $kontak->email = $request->email;
+        $kontak->pesan = $request->pesan;
+    
+        // Simpan perubahan
+        $kontak->save();
+    
+        // Cek jika berhasil diupdate dan redirect
+        if ($kontak) {
+            session()->flash('success', 'Kontak Berhasil Diupdate');
+            return redirect()->route('admin.kontak.index'); // redirect ke daftar kontak
+        } else {
+            session()->flash('error', 'Terjadi masalah saat update');
+            return redirect()->route('admin.kontak.edit', ['id' => $id]); // kembali ke halaman edit
+        }
     }
+    
 
     /**
      * Remove the specified resource from storage.

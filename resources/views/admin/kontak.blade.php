@@ -26,21 +26,23 @@
             </thead>
             <tbody>
                 @foreach ($kontak as $kontak)
-                    <tr>
-                        <td>{{ $kontak->id }}</td>
-                        <td>{{ $kontak->nama }}</td>
-                        <td>{{ $kontak->email }}</td>
-                        <td>{{ $kontak->pesan }}</td>
-                        <td>{{ $kontak->created_at }}</td>
-                        <td>
-                            <div class="d-flex">
-                                <a href="create" class="btn btn-success me-2">edit</a> 
-                                <a href="{{ route('admin/kontak/edit', ['id' => $kontak->id]) }}"type="button" class="btn btn-secondary">Edit</a>
-                                <form action="/kontak{{ $kontak->id }}" method="POST">
-                                    @method('delete')
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger">Hapus</button>
-                                </form>
+                <tr>
+                    <td>{{ $kontak->id }}</td>
+                    <td>{{ $kontak->nama }}</td>
+                    <td>{{ $kontak->email }}</td>
+                    <td>{{ $kontak->pesan }}</td>
+                    <td>{{ $kontak->created_at }}</td>
+                    <td>
+                        <div class="d-flex">
+                            <!-- Link Edit -->
+                            <a href="{{ route('admin.kontak.edit', ['id' => $kontak->id]) }}" class="btn btn-secondary me-2">Edit</a>
+                            
+                            <!-- Form Hapus -->
+                            <form action="{{ route('admin.kontak.destroy', ['id' => $kontak->id]) }}" method="POST">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
                             </div>
                         </td>
                         

@@ -20,14 +20,14 @@
         <div class="container">
             <nav>
                 <img src="img/nn2.png" class="logo">
-                <ul id="sidemenu">
+                {{-- <ul id="sidemenu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#service">Service</a></li>
                     <li><a href="#portofolio">Portofolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <i class='bx bx-x' onclick="closemenu()"></i>
-                </ul>
+                </ul> --}}
                 <i class='bx bx-menu' id='menu-icon' onclick="openmenu()"></i>
 
                 <!-- Login/Registration Links -->

@@ -57,7 +57,7 @@
     </div>
     </div>
 
-    {{-- PROJECT SHOW --}}
+    {{-- PROJECT SHOW
     <div class="container mt-5">
         <h1 class="mb-4">Project</h1>
         <table class="table table-striped">
@@ -71,7 +71,7 @@
                     <th>Aksi</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> --}}
                 {{-- @foreach ($kontak as $kontak)
                     <tr>
                         <td>{{ $kontak->id }}</td>
@@ -81,16 +81,16 @@
                         <td>{{ $kontak->created_at }}</td>
                     </tr>
                 @endforeach --}}
-            </tbody>
+            {{-- </tbody>
         </table>
-    </div>
+    </div> --}}
 
-    <button id="tambahButton" href="create" class="btn btn-primary">Tambah</button>
+    {{-- <button id="tambahButton" href="create" class="btn btn-primary">Tambah</button> --}}
     {{-- <a href="create" class="btn btn-success">edit</a> --}}
 
     <!-- Container Form (Hidden by default) -->
     <div id="formContainer" style="display: none;">
-        <form action="{{ route('pro.store') }}" method="POST">
+        {{-- <form action="{{ route('pro.store') }}" method="POST"> --}}
             @csrf
             <input type="text" id="nama" name="nama" placeholder="Your Name" required>
             <input type="email" id="email" name="email" placeholder="Your Email" required>

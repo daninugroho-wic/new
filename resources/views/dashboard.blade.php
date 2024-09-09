@@ -70,11 +70,9 @@
                 </div>
                 <div class="tab-contents" id="experience">
                     <ul>
-                        <li><span>UI/UX</span><br>Designing Web BBBB</li>
-                        <li><span>Web Development</span><br>Designing
-                            Web</li>
-                        <li><span>App Development</span><br>Designing
-                            Web</li>
+                        <li><span>Membuat aplikasi</span><br>Microsoft Visual Studio</li>
+                        <li><span>Webinar pelatihan membuat framework</span><br>Django, Flutter, ReactJS</li>
+                        <li><span>Mengikuti pelatihan dicoding</span><br>Front End</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="education">
@@ -91,7 +89,7 @@
 <!-- Sevice -->
 <div id="service">
     <div class="container">
-        <h1 class="sub-title">My Service</h1>
+        <h1 class="sub-title">My Programming Language</h1>
         <div class="services-list">
             <div>
                 <i class='bx bxl-django'></i>
@@ -132,8 +130,7 @@
                 <img src="img/n1.png">
                 <div class="layer">
                     <h3>Hasil Project 1</h3>
-                    <p class="sub-p">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
+                    <p class="sub-p">Aplikasi KRS Kartu Rencana Studi, menggunakan aplikasi visual studio </p>
                     <a href="#"><i class='bx bxl-github'></i></a>
                 </div>
             </div>
@@ -141,28 +138,25 @@
                 <img src="img/n2.png">
                 <div class="layer">
                     <h3>Hasil Project 2</h3>
-                    <p class="sub-p">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
-                    <a href="https://github.com/daninugroho-wic/E-Commerce"><i class='bx bxl-github'></i></a>
+                    <p class="sub-p">Website Mobile game guide, menggunakan framework flutter bahasa dart</p>
+                    <a href="#"><i class='bx bxl-github'></i></a>
                 </div>
             </div>
             <div class="work">
                 <img src="img/n3.png">
                 <div class="layer">
                     <h3>Hasil Project 3</h3>
-                    <p class="sub-p">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
-                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <p class="sub-p">Membuat tampilan interface KRS </p>
+                    <a href="https://www.figma.com/design/LAnpB7Uxgggx24k7rGJ7C0/Interface-KRS-UDB?node-id=66-448&t=gXEjbFRhQH6zuoC9-1"><i class='bx bxl-github'></i></a>
                 </div>
             </div>
             <!-- Mulai dari sini, work container disembunyikan secara default -->
             <div class="work hideable">
-                <img src="img/n3.png">
+                <img src="img/n4.png">
                 <div class="layer">
                     <h3>Hasil Project 4</h3>
-                    <p class="sub-p">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Dolorem numquam, ullam accusamus impedit officiis, </p>
-                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <p class="sub-p">Membuat aplikasi e-commerce menggunakan framework flutter</p>
+                    <a href="https://github.com/daninugroho-wic/E-Commerce"><i class='bx bxl-github'></i></a>
                 </div>
             </div>
             <div class="work hideable">

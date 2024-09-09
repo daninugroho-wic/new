@@ -10,11 +10,8 @@ html {
 }
 
 body {
-    /* background: rgb(0, 0, 0); */
     background: url(/img/nb.jpg);
     background-size: cover;
-    /* background-position: right; */
-    /* background-attachment: fixed; */
     color: #fff;
 }
 
@@ -35,14 +32,20 @@ body {
     background-attachment: fixed;
 }
 
+/* NAVBAR */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: fixed; /* Posisi tetap */
+    top: 0; /* Selalu di bagian atas */
+    width: 100%; /* Lebar penuh */
+    z-index: 1000; /* Z-index tinggi agar di atas konten lain */
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang transparan */
+    padding: 4px 20px;
 }
 
-/* NAVBAR */
 nav ul li {
     display: inline-block;
     list-style: none;
@@ -84,7 +87,6 @@ nav ul li a:hover::after {
 .header-text h1 {
     margin-top: 60px;
     font-size: 60px;
-
 }
 
 .header-text h1 span {
