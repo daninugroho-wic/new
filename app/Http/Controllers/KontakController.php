@@ -6,26 +6,75 @@ use App\Models\Kontak;
 use Illuminate\Http\Request;
 
 class KontakController extends Controller {
-    /**
-    * Display a listing of the resource.
-    */
-
     public function index() {
-        $kontak = Kontak::all();
-        return view( 'admin.kontak', compact( 'kontak' ) );
+        $kontak = Kontak::orderBy( 'id', 'desc' )->get();
+        $total = Kontak::count();
+        return view( 'admin.kontak', compact( 'kontak', 'total' ) );
     }
+    //aman
 
-    /**
-    * Show the form for creating a new resource.
-    */
-
-    public function create() {
-        //
+    public function indexs() {
+        return view( 'admin.contoh' );
     }
+    //aman
 
-    /**
-    * Store a newly created resource in storage.
-    */
+    public function save( Request $request ) {
+        $validation = $request->validate( [
+            'nama' => 'required',
+            'email' => 'required',
+            'pesan' => 'required',
+        ] );
+
+        $data = Kontak::create( $validation );
+        if ( $data ) {
+            session()->flash( 'success', 'Product Add Successfully' );
+            return redirect( route( 'dashboard' ) );
+        } else {
+            session()->flash( 'error', 'Some problem occurred' );
+            return redirect( route( 'dashboard.create' ) );
+        }
+    }
+    //aman
+
+    public function edit( $id ) {
+        $kontak = Kontak::findOrFail( $id );
+        return view( 'admin.update', compact( 'kontak' ) );
+    }
+    //aman
+
+    public function update( Request $request, $id ) {
+        $request->validate( [
+            'nama' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'pesan' => 'required|string',
+        ] );
+
+        $kontak = Kontak::findOrFail( $id );
+        $kontak->nama = $request->nama;
+        $kontak->email = $request->email;
+        $kontak->pesan = $request->pesan;
+        $kontak->save();
+
+        if ( $kontak ) {
+            session()->flash( 'success', 'Kontak Berhasil Diupdate' );
+            return redirect()->route( 'admin.kontak.index' );
+        } else {
+            session()->flash( 'error', 'Terjadi masalah saat update' );
+            return redirect()->route( 'admin.kontak.edit', [ 'id' => $id ] );
+        }
+    }
+    //aman
+
+    public function delete( $id ) {
+        $kontak = Kontak::findOrFail( $id )->delete();
+        if ( $kontak ) {
+            session()->flash( 'success', 'Product Successfully Deleted' );
+            return redirect( route( 'admin.kontak' ) );
+        } else {
+            session()->flash( 'error', 'Product Deletion Failed' );
+            return redirect( route( 'admin.kontak' ) );
+        }
+    }
 
     public function store( Request $request ) {
         $validatedData = $request->validate( [
@@ -34,70 +83,13 @@ class KontakController extends Controller {
             'pesan' => 'required',
         ] );
 
-        // Simpan data ke dalam tabel
         Kontak::create( $validatedData );
 
-        // return view( 'admin.dashboard' );
+
         return redirect()->back()->with( 'success', 'Pesan berhasil di kirim!' );
     }
 
-    /**
-    * Display the specified resource.
-    */
-
     public function show( kontak $kontak ) {
-        // return view( 'kontak.show' );
-    }
-
-    /**
-    * Show the form for editing the specified resource.
-    */
-
-    public function edit( $id ) {
-        $kontak = Kontak::findOrFail( $id );
-        return view( 'admin.kontak.update', compact( 'kontak' ) );
-    }
-
-    /**
-    * Update the specified resource in storage.
-    */
-
-    public function update( Request $request, $id ) {
-        // Validasi data
-        $request->validate( [
-            'nama' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'pesan' => 'required|string',
-        ] );
-
-        // Temukan kontak berdasarkan ID
-        $kontak = Kontak::findOrFail( $id );
-
-        // Update nilai kontak
-        $kontak->nama = $request->nama;
-        $kontak->email = $request->email;
-        $kontak->pesan = $request->pesan;
-
-        // Simpan perubahan
-        $kontak->save();
-
-        // Cek jika berhasil diupdate dan redirect
-        if ( $kontak ) {
-            session()->flash( 'success', 'Kontak Berhasil Diupdate' );
-            return redirect()->route( 'admin.kontak.index' );
-            // redirect ke daftar kontak
-        } else {
-            session()->flash( 'error', 'Terjadi masalah saat update' );
-            return redirect()->route( 'admin.kontak.edit', [ 'id' => $id ] );
-            // kembali ke halaman edit
-        }
-    }
-
-    /**
-    * Remove the specified resource from storage.
-    */
-
-    public function destroy( kontak $kontak ) {
-        //
+        return view( 'kontak.show' );
     }
 }

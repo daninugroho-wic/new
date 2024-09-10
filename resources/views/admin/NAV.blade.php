@@ -1,13 +1,13 @@
+<!-- resources/views/kontak.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard Admin</title>
-    <link rel="stylesheet" href="admin.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Edit Kontak</title>
+    <link rel="stylesheet" href="css/kontak.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -17,7 +17,6 @@
             <a class="navbar-brand ms-3" href="/">Admin Dashboard</a>
             <a class="navbar-brand ms-5" href="kontak">Kontak</a>
             <a class="navbar-brand ms-1" href="products">Product</a>
-            <a class="navbar-brand ms-1" href="projects">Project</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
@@ -51,29 +50,12 @@
             </div>
         </div>
     </nav>
-
-    <!-- Main Content -->
-    <div class="content p-5">
-        <h1 class="mb-4">HALAMAN ADMIN</h1>
-        <p>Selamat datang di halaman admin! Anda dapat mengelola aplikasi dari sini.</p>
+    <div class="container mt-5">
+        <h1 class="mb-4">Edit Kontak</h1>
+        {{-- ISI KONTEN DI SINI --}}
     </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // JavaScript to toggle sidebar
-        document.getElementById('toggleSidebar').addEventListener('click', function() {
-            var sidebar = document.getElementById('sidebar');
-            var content = document.getElementById('mainContent');
-            sidebar.classList.toggle('hide-sidebar');
-            content.classList.toggle('full-width');
-        });
-
-        document.getElementById('tambahButton').addEventListener('click', function() {
-            var formContainer = document.getElementById('formContainer');
-            formContainer.style.display = (formContainer.style.display === 'none') ? 'block' : 'none';
-        });
-    </script>
+    </td>
 </body>
 <style>
     body {
@@ -83,10 +65,6 @@
 
     .mb-4 {
         color: orange
-    }
-
-    .p {
-        font: aliceblue
     }
 </style>
 

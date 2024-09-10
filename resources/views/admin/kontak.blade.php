@@ -11,6 +11,18 @@
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-3" href="/admin/dashadmin">Admin Dashboard</a>
+            <a class="navbar-brand ms-5" href="kontak">Kontak</a>
+            <a class="navbar-brand ms-1" href="products">Product</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container mt-5">
         <h1 class="mb-4">Daftar Kontak</h1>
         <table class="table table-striped">
@@ -25,33 +37,28 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($kontak as $kontak)
-                <tr>
-                    <td>{{ $kontak->id }}</td>
-                    <td>{{ $kontak->nama }}</td>
-                    <td>{{ $kontak->email }}</td>
-                    <td>{{ $kontak->pesan }}</td>
-                    <td>{{ $kontak->created_at }}</td>
-                    <td>
-                        <div class="d-flex">
-                            <!-- Link Edit -->
-                            <a href="{{ route('admin.kontak.edit', ['id' => $kontak->id]) }}" class="btn btn-secondary me-2">Edit</a>
-                            
-                            <!-- Form Hapus -->
-                            <form action="{{ route('admin.kontak.destroy', ['id' => $kontak->id]) }}" method="POST">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Hapus</button>
-                            </form>
-                            </div>
+                @forelse ($kontak as $kontak)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $kontak->nama }}</td>
+                        <td>{{ $kontak->email }}</td>
+                        <td>{{ $kontak->pesan }}</td>
+                        <td>{{ $kontak->created_at }}</td>
+                        <td>
+                            <a href="{{ route('kontak.edit', ['id' => $kontak->id]) }}"type="button"
+                                class="btn btn-secondary">Edit</a>
+                            <a href="{{ route('kontak.delete', ['id' => $kontak->id]) }}"type="button"
+                                class="btn btn-secondary">Hapus</a>
                         </td>
-                        
+                    <tr>
+                    @empty
+                    <tr>
+                        <td class="text-center" colspan="5">Pduct not found</td>
                     </tr>
-                @endforeach
+                @endforelse
             </tbody>
         </table>
     </div>
-    </td>
 </body>
 <style>
     body {

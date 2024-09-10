@@ -160,7 +160,7 @@
                 </div>
             </div>
             <div class="work hideable">
-                <img src="img/n3.png">
+                <img src="img/n5.png">
                 <div class="layer">
                     <h3>Hasil Project 5</h3>
                     <p class="sub-p">Lorem ipsum dolor sit amet consectetur
@@ -169,7 +169,7 @@
                 </div>
             </div>
             <div class="work hideable">
-                <img src="img/n3.png">
+                <img src="img/n5.png">
                 <div class="layer">
                     <h3>Hasil Project 6</h3>
                     <p class="sub-p">Lorem ipsum dolor sit amet consectetur
