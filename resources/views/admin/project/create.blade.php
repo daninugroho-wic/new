@@ -25,7 +25,7 @@
     <div class="container mt-5">
         <h1 class="mb-4">Tambah Kontak</h1>
         {{-- ISI KONTEN DI SINI --}}
-        <div class="container">
+        <div class="card shadow-sm p-4 mb-4 bg-white rounded">
             {{-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>

@@ -53,6 +53,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/projects/create', [ProjectController::class, 'create'])->name('admin.projects.create');
     Route::post('/projects/save', [ProjectController::class, 'save'])->name('admin.project.save');
     Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('admin.projects.show');
+    Route::resource('projects', ProjectController::class);
 
 
     Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('admin.projects.edit');
