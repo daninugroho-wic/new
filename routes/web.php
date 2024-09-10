@@ -32,7 +32,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
     // KONTAK
     Route::get('/kontak', [KontakController::class, 'index'])->name('admin.kontak.index');
-    Route::get('/create', [KontakController::class, 'create'])->name('admin.create');
+    Route::get('/create', [KontakController::class, 'create'])->name('kontak.create');
     Route::post('/kontak', [KontakController::class, 'store'])->name('kontak.store');
     Route::get('/kontak/edit/{id}', [KontakController::class, 'edit'])->name('kontak.edit');
     Route::put('/kontak/edit/{id}', [KontakController::class, 'update'])->name('kontak.update');

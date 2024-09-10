@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <a class="navbar-brand ms-3" href="/admin/dashadmin">Admin Dashboard</a>
             <a class="navbar-brand ms-5" href="kontak">Kontak</a>
-            <a class="navbar-brand ms-1" href="products">Product</a>
+            <a class="navbar-brand ms-1" href="products">Skill</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
 
@@ -26,11 +26,11 @@
     </nav>
 
     <div class="container mt-5">
-        <h1 class="mb-4">Daftar Produk</h1>
+        <h1 class="mb-4">Daftar Skill</h1>
 
 
         <div class="d-flex justify-content-end mb-1">
-            <a href="{{ route('admin.products.create') }}" class="btn btn-primary">Add Product</a>
+            <a href="{{ route('admin.products.create') }}" class="btn btn-primary">Tambah Skill</a>
         </div>
 
         @if (Session::has('Berhasil'))
@@ -43,9 +43,9 @@
             <thead class="table table-striped">
                 <tr>
                     <th>ID</th>
-                    <th>Title</th>
-                    <th>Category</th>
-                    <th>Price</th>
+                    <th>Skill</th>
+                    <th>Pengalaman</th>
+                    <th>Tahun</th>
                     <th>Dibuat Pada</th>
                     <th>Action</th>
                 </tr>
@@ -69,7 +69,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td class="text-center" colspan="6">Product not found</td>
+                        <td class="text-center" colspan="6">Skill not found</td>
                     </tr>
                 @endforelse
             </tbody>

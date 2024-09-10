@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <a class="navbar-brand ms-3" href="/admin/dashadmin">Admin Dashboard</a>
             <a class="navbar-brand ms-5" href="kontak">Kontak</a>
-            <a class="navbar-brand ms-1" href="products">Product</a>
+            <a class="navbar-brand ms-1" href="products">Skill</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                 </ul>
