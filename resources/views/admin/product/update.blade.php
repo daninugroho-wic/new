@@ -26,42 +26,41 @@
         <h1 class="mb-4">Edit Skill</h1>
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="card shadow-sm p-4 mb-4 bg-white rounded">
-                        <form action="{{ route('admin.products.update', $products->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <div class="row mb-3">
-                                <div class="col mb-3">
-                                    <label class="form-label">Skill</label>
-                                    <input type="text" name="title" class="form-control" plaSkillceholder="Title"
-                                   value="{{ old('title', $products->title) }}">
-                                    @error('title')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
+
+                <div class="card shadow-sm p-4 mb-4 bg-white rounded">
+                    <form action="{{ route('admin.products.update', $products->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div class="row mb-3">
+                            <div class="col mb-3">
+                                <label class="form-label">Skill</label>
+                                <input type="text" name="title" class="form-control" plaSkillceholder="Title"
+                                    value="{{ old('title', $products->title) }}">
+                                @error('title')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <label class="form-label">Pengalaman</label>
-                                    <input type="text" name="category" class="form-control" placeholder="Category"
-                                        value="{{ old('category', $products->category) }}">
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Pengalaman</label>
+                                <input type="text" name="category" class="form-control" placeholder="Category"
+                                    value="{{ old('category', $products->category) }}">
                             </div>
-                            <div class="row">
-                                <div class="col mb-3">
-                                    <label class="form-label">Tahun</label>
-                                    <input type="text" name="price" class="form-control" placeholder="Price"
-                                        value="{{ old('price', $products->price) }}">
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label class="form-label">Tahun</label>
+                                <input type="text" name="price" class="form-control" placeholder="Price"
+                                    value="{{ old('price', $products->price) }}">
                             </div>
-                            <div class="row">
-                                <div class="d-grid">
-                                    <button class="btn btn-primary">Submit</button>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-grid">
+                                <button class="btn btn-primary">Submit</button>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

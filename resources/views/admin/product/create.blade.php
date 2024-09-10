@@ -26,7 +26,8 @@
         <h1 class="mb-4">Tambah Skill</h1>
         {{-- ISI KONTEN DI SINI --}}
         <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto sm:px- lg:px-8">
+                
                 <div class="card shadow-sm p-4 mb-4 bg-white rounded">
                     @if (session()->has('error'))
                         <div>

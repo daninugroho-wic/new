@@ -38,43 +38,43 @@
                 {{ session::get('Berhasil') }}
             </div>
         @endif
-
-        <table class="table table-striped">
-            <thead class="table table-striped">
-                <tr>
-                    <th>ID</th>
-                    <th>Skill</th>
-                    <th>Pengalaman</th>
-                    <th>Tahun</th>
-                    <th>Dibuat Pada</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($products as $product)
+        <div class="card shadow-sm p-4 mb-4 bg-white rounded">
+            <table class="table table-striped">
+                <thead class="table table-striped">
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $product->title }}</td>
-                        <td>{{ $product->category }}</td>
-                        <td>{{ $product->price }}</td>
-                        <td>{{ $product->created_at }}</td>
-                        <td>
-
-                            <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" type="button"
-                                class="btn btn-secondary">Edit</a>
-                            <a href="{{ route('admin.products.delete', ['id' => $product->id]) }}" type="button"
-                                class="btn btn-secondary">Hapus</a>
-
-                        </td>
+                        <th>ID</th>
+                        <th>Skill</th>
+                        <th>Pengalaman</th>
+                        <th>Tahun</th>
+                        <th>Dibuat Pada</th>
+                        <th>Action</th>
                     </tr>
-                @empty
-                    <tr>
-                        <td class="text-center" colspan="6">Skill not found</td>
-                    </tr>
-                @endforelse
-            </tbody>
+                </thead>
+                <tbody>
+                    @forelse ($products as $product)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $product->title }}</td>
+                            <td>{{ $product->category }}</td>
+                            <td>{{ $product->price }}</td>
+                            <td>{{ $product->created_at }}</td>
+                            <td>
 
-        </table>
+                                <a href="{{ route('admin.products.edit', ['id' => $product->id]) }}" type="button"
+                                    class="btn btn-secondary">Edit</a>
+                                <a href="{{ route('admin.products.delete', ['id' => $product->id]) }}" type="button"
+                                    class="btn btn-secondary">Hapus</a>
+
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td class="text-center" colspan="6">Skill not found</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 <style>

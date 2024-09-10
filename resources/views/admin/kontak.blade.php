@@ -25,39 +25,41 @@
     </nav>
     <div class="container mt-5">
         <h1 class="mb-4">Daftar Kontak</h1>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Pesan</th>
-                    <th>Dibuat Pada</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @forelse ($kontak as $kontak)
+        <div class="card shadow-sm p-4 mb-4 bg-white rounded">
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $kontak->nama }}</td>
-                        <td>{{ $kontak->email }}</td>
-                        <td>{{ $kontak->pesan }}</td>
-                        <td>{{ $kontak->created_at }}</td>
-                        <td>
-                            <a href="{{ route('kontak.edit', ['id' => $kontak->id]) }}"type="button"
-                                class="btn btn-secondary">Edit</a>
-                            <a href="{{ route('kontak.delete', ['id' => $kontak->id]) }}"type="button"
-                                class="btn btn-secondary">Hapus</a>
-                        </td>
-                    <tr>
-                    @empty
-                    <tr>
-                        <td class="text-center" colspan="5">Pduct not found</td>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Email</th>
+                        <th>Pesan</th>
+                        <th>Dibuat Pada</th>
+                        <th>Aksi</th>
                     </tr>
-                @endforelse
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @forelse ($kontak as $kontak)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $kontak->nama }}</td>
+                            <td>{{ $kontak->email }}</td>
+                            <td>{{ $kontak->pesan }}</td>
+                            <td>{{ $kontak->created_at }}</td>
+                            <td>
+                                <a href="{{ route('kontak.edit', ['id' => $kontak->id]) }}"type="button"
+                                    class="btn btn-secondary">Edit</a>
+                                <a href="{{ route('kontak.delete', ['id' => $kontak->id]) }}"type="button"
+                                    class="btn btn-secondary">Hapus</a>
+                            </td>
+                        <tr>
+                        @empty
+                        <tr>
+                            <td class="text-center" colspan="5">Pduct not found</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 <style>
